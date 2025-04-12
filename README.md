@@ -18,8 +18,6 @@ This project automates two major stages of deployment:
 1. **Build & Push Workflow** – On every push, Docker builds the application image and pushes it to Docker Hub.
 2. **Deploy Workflow** – Triggered manually via the GitHub UI (using `workflow_dispatch`) to deploy a specific image version to a remote server over SSH.
 
-![GitHub Actions Build and Push](https://user-images.githubusercontent.com/4527477/233841769-01901f53-863e-45aa-98d4-8b7c3e3fa4d1.png)
-
 ---
 
 ## ⚙️ Workflows Included
@@ -66,8 +64,6 @@ on:
 
 - [`actions/checkout`](https://github.com/actions/checkout)
 - [`slackapi/slack-github-action`](https://github.com/slackapi/slack-github-action)
-
-![Slack Deployment Message](https://user-images.githubusercontent.com/4527477/233841799-3e4b194e-27b3-4426-831a-229a298b3613.png)
 
 ---
 
