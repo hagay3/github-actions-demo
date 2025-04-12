@@ -52,13 +52,21 @@ jobs:
           webhook: ${{ secrets.SLACK_WEBHOOK_URL }}
           webhook-type: incoming-webhook
           payload: |
-            text: "*New version has been deployed*: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}"
-            blocks:
-              - type: "section"
-                text:
-                  type: "mrkdwn"
-                  text: "New version has been deployed: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}"
-              - type: "section"
-                text:
-                  type: "mrkdwn"
-                  text: "Version: ${{ github.event.inputs.version }}"
+             text: ":rocket: *Deployment Notice*\nA new version has just been deployed by *${{ github.actor }}*! :tada:"
+             blocks:
+                - type: "section"
+                  text:
+                    type: "mrkdwn"
+                    text: ":rocket: *Deployment Notice*\nA new version has just been deployed by *${{ github.actor }}*! :tada:"
+                - type: "section"
+                  text:
+                    type: "mrkdwn"
+                    text: "*Status:* `${{ job.status }}`"
+                - type: "section"
+                  text:
+                    type: "mrkdwn"
+                    text: "*Version:* `${{ github.event.inputs.version }}`"
+                - type: "section"
+                  text:
+                    type: "mrkdwn"
+                    text: "*Details:* <${{ github.event.pull_request.html_url || github.event.head_commit.url }}|View on GitHub>"
