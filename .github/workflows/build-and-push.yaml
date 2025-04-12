@@ -1,4 +1,4 @@
-name: Build & Push
+name: Build & Push (${{ github.sha }})
 
 on:
   push:
