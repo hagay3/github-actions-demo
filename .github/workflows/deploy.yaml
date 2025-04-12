@@ -1,4 +1,4 @@
-name: Deploy (${{ github.event.inputs.version }})
+name: Deploy
 
 on:
   workflow_dispatch:
@@ -14,7 +14,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Deploy to Server
+      - name: Deploy to Server (${{ github.event.inputs.version }})
         env:
           SERVER_USER: ${{ secrets.SERVER_USER }}
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
