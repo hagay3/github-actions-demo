@@ -69,4 +69,4 @@ jobs:
                 - type: "section"
                   text:
                     type: "mrkdwn"
-                    text: "*Details:* <${{ github.event.pull_request.html_url || github.event.head_commit.url }}|View on GitHub>"
+                    text: "<http://production-github-actions-demo.hagaiacademy.com:3000/volt-react-dashboard#/dashboard/overview|🚀 Go to Dashboard>"
