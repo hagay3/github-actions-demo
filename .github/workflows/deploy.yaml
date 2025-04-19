@@ -19,7 +19,9 @@ jobs:
           SERVER_USER: ${{ secrets.SERVER_USER }}
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           VERSION: ${{ github.event.inputs.version }}
-        run: ./.github/scripts/deploy.sh
+        run: |
+            chmod u+x ./.github/scripts/deploy.sh
+            ./.github/scripts/deploy.sh
 
       # https://github.com/marketplace/actions/slack-send-to-slack
       - name: Send slack message
