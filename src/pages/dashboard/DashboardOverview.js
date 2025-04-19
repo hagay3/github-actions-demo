@@ -1,37 +1,12 @@
+
 import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faCashRegister,
-  faChartLine,
-  faCloudUploadAlt,
-  faPlus,
-  faRocket,
-  faTasks,
-  faUserShield
-} from '@fortawesome/free-solid-svg-icons';
+import { faCashRegister, faChartLine, faCloudUploadAlt, faPlus, faRocket, faTasks, faUserShield } from '@fortawesome/free-solid-svg-icons';
 import { Col, Row, Button, Dropdown, ButtonGroup } from '@themesberg/react-bootstrap';
 
-import {
-  CounterWidget,
-  CircleChartWidget,
-  BarChartWidget,
-  TeamMembersWidget,
-  ProgressTrackWidget,
-  RankingWidget,
-  SalesValueWidget,
-  SalesValueWidgetPhone,
-  AcquisitionWidget
-} from "../../components/Widgets";
-
+import { CounterWidget, CircleChartWidget, BarChartWidget, TeamMembersWidget, ProgressTrackWidget, RankingWidget, SalesValueWidget, SalesValueWidgetPhone, AcquisitionWidget } from "../../components/Widgets";
 import { PageVisitsTable } from "../../components/Tables";
 import { trafficShares, totalOrders } from "../../data/charts";
-
-// ✅ Dummy data for Customers Growth
-const customerGrowth = {
-  title: "Customers Growth",
-  value: "345k",
-  percentage: 12.4
-};
 
 export default () => {
   return (
@@ -51,7 +26,9 @@ export default () => {
               <Dropdown.Item className="fw-bold">
                 <FontAwesomeIcon icon={faUserShield} className="me-2" /> Preview Security
               </Dropdown.Item>
+
               <Dropdown.Divider />
+
               <Dropdown.Item className="fw-bold">
                 <FontAwesomeIcon icon={faRocket} className="text-danger me-2" /> Upgrade to Pro
               </Dropdown.Item>
@@ -65,25 +42,13 @@ export default () => {
         </div>
 
         <Row className="justify-content-md-center">
-          {/* Sales Value */}
-          <Col xs={12} md={6} className="mb-4 d-none d-sm-block">
+          <Col xs={12} className="mb-4 d-none d-sm-block">
             <SalesValueWidget
                 title="Sales Value"
                 value="$11k"
                 percentage={10.57}
             />
           </Col>
-
-          {/* Customers Growth */}
-          <Col xs={12} md={6} className="mb-4 d-none d-sm-block">
-            <SalesValueWidget
-                title={customerGrowth.title}
-                value={customerGrowth.value}
-                percentage={customerGrowth.percentage}
-            />
-          </Col>
-
-          {/* Mobile view fallback */}
           <Col xs={12} className="mb-4 d-sm-none">
             <SalesValueWidgetPhone
                 title="Sales Value"
@@ -91,7 +56,6 @@ export default () => {
                 percentage={10.57}
             />
           </Col>
-
           <Col xs={12} sm={6} xl={4} className="mb-4">
             <CounterWidget
                 category="Customers"
@@ -115,7 +79,9 @@ export default () => {
           </Col>
 
           <Col xs={12} sm={6} xl={4} className="mb-4">
-            <CircleChartWidget title="Traffic Share" data={trafficShares} />
+            <CircleChartWidget
+                title="Traffic Share"
+                data={trafficShares} />
           </Col>
         </Row>
 
@@ -145,8 +111,7 @@ export default () => {
                         title="Total orders"
                         value={452}
                         percentage={18.2}
-                        data={totalOrders}
-                    />
+                        data={totalOrders} />
                   </Col>
 
                   <Col xs={12} className="px-0 mb-4">
