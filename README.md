@@ -105,3 +105,4 @@ Once deployed, you can view the dashboard at:
 ## 🏁 Final Notes
 
 This project is a lightweight and powerful example of real-world CI/CD using GitHub Actions, Docker, SSH deployment, and Slack Notifications 🚀
+
